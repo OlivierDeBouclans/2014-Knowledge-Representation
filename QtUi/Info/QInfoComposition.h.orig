@@ -1,0 +1,59 @@
+#ifndef QINFOCOMPOSITION_H
+#define QINFOCOMPOSITION_H
+
+#include <QWidget>
+#include <QTreeWidgetItem>
+
+class Node;
+class Entity;
+
+template<class T> class Tree;
+
+class GraphCompTreeItem : public QTreeWidgetItem
+{
+  public:
+    GraphCompTreeItem(Node *);
+
+    Node* m_pNode;
+};
+
+namespace Ui
+{
+  class QInfoComposition;
+}
+
+class QInfoComposition : public QWidget
+{
+    Q_OBJECT
+
+  public:
+    enum
+    {
+      Property=0,
+      From=1,
+      Type=2,
+      Depth=3,
+      DefinedBy=4
+    };
+
+    explicit QInfoComposition(QWidget *parent = 0);
+    ~QInfoComposition();
+
+    void display(Entity* e);
+      void displayHierarchy(Tree<Node*> t);
+        void displayHierarchy(Tree<Node*> t, QTreeWidgetItem* item);
+      void displayComposition(Tree<Node*> t);
+        void displayComposition(Tree<Node*> t, QTreeWidgetItem* item,int depth);
+          void displayComposition(Node* parent, Tree<Node*> t, QTreeWidgetItem* item,int depth);
+
+  public slots:
+    void display(QTreeWidgetItem*,int);
+    void display(QTreeWidgetItem*);
+
+
+  private:
+    Ui::QInfoComposition *ui;
+
+};
+
+#endif // QINFOCOMPOSITION_H

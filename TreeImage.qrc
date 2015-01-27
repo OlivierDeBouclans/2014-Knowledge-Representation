@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Image/branch-closed.png</file>
+        <file>Image/branch-end.png</file>
+        <file>Image/branch-more.png</file>
+        <file>Image/branch-open.png</file>
+        <file>Image/vline.png</file>
+    </qresource>
+</RCC>

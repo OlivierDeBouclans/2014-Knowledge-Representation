@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="QMenu" name="menuNew">
+     <property name="title">
+      <string>New</string>
+     </property>
+     <property name="icon">
+      <iconset resource="Icons.qrc">
+       <normaloff>:/new/Image/Icon/actions/list-add.png</normaloff>:/new/Image/Icon/actions/list-add.png</iconset>
+     </property>
+     <addaction name="actionNew_Entity"/>
+     <addaction name="actionNew_Decorator"/>
+     <addaction name="actionNew_Edge"/>
+    </widget>
+    <addaction name="menuNew"/>
+    <addaction name="actionEdit"/>
+    <addaction name="actionDelete"/>
+    <addaction name="separator"/>
+    <addaction name="actionHide"/>
+    <addaction name="actionBring_to_front"/>
+    <addaction name="actionBring_to_back"/>
+    <addaction name="separator"/>
+    <addaction name="actionInformation"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave"/>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionRestart_Scene"/>
+    <addaction name="actionShow"/>
+    <addaction name="actionInformation"/>
+    <addaction name="separator"/>
+    <addaction name="actionDockSemanticNet"/>
+    <addaction name="actionDockInforamtion"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionSaveAs"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew_Entity"/>
+   <addaction name="actionEdit"/>
+   <addaction name="actionDelete"/>
+   <addaction name="separator"/>
+   <addaction name="actionHide"/>
+   <addaction name="actionBring_to_front"/>
+   <addaction name="actionBring_to_back"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionRestart_Scene"/>
+   <addaction name="actionShow"/>
+   <addaction name="actionInformation"/>
+  </widget>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/edit-delete.png</normaloff>:/new/Image/Icon/actions/edit-delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete Selection</string>
+   </property>
+   <property name="statusTip">
+    <string>Remove the selection from the semantic net</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Del</string>
+   </property>
+  </action>
+  <action name="actionRestart_Scene">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/view-refresh.png</normaloff>:/new/Image/Icon/actions/view-refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Restart View</string>
+   </property>
+   <property name="iconText">
+    <string>Restart View</string>
+   </property>
+   <property name="toolTip">
+    <string>Restart View</string>
+   </property>
+   <property name="statusTip">
+    <string>Restart the item position</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::TextHeuristicRole</enum>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/document-save.png</normaloff>:/new/Image/Icon/actions/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save net</string>
+   </property>
+   <property name="statusTip">
+    <string>Save the current semantic net</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/document-open.png</normaloff>:/new/Image/Icon/actions/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open a net</string>
+   </property>
+   <property name="statusTip">
+    <string>Select a saved semantic net to open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/document-new.png</normaloff>:/new/Image/Icon/actions/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>New Net</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a new semantic net</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/application-exit.png</normaloff>:/new/Image/Icon/actions/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/document-save-as.png</normaloff>:/new/Image/Icon/actions/document-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save as...</string>
+   </property>
+   <property name="toolTip">
+    <string>Save net as</string>
+   </property>
+   <property name="statusTip">
+    <string>Save the current net as...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionNew_Entity">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/list-add.png</normaloff>:/new/Image/Icon/actions/list-add.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Entity</string>
+   </property>
+   <property name="statusTip">
+    <string>Add a new entity to the semantic net</string>
+   </property>
+   <property name="shortcut">
+    <string>N</string>
+   </property>
+  </action>
+  <action name="actionHide">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/controls-eyeball-off-128.png</normaloff>:/new/Image/Icon/actions/controls-eyeball-off-128.png</iconset>
+   </property>
+   <property name="text">
+    <string>Hide</string>
+   </property>
+   <property name="toolTip">
+    <string>Hide selection</string>
+   </property>
+   <property name="statusTip">
+    <string>Remove the selection from the view</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionInformation">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/view-calendar-list.png</normaloff>:/new/Image/Icon/actions/view-calendar-list.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Details</string>
+   </property>
+   <property name="toolTip">
+    <string>Display information about selected item</string>
+   </property>
+  </action>
+  <action name="actionEdit">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/edit-select-all.png</normaloff>:/new/Image/Icon/actions/edit-select-all.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit the selected the element</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionNew_Decorator">
+   <property name="text">
+    <string>New Decorator</string>
+   </property>
+   <property name="toolTip">
+    <string>Add a new decorator to the selected node</string>
+   </property>
+  </action>
+  <action name="actionNew_Edge">
+   <property name="text">
+    <string>New Edge</string>
+   </property>
+   <property name="toolTip">
+    <string>Create an edge between the two nodes</string>
+   </property>
+  </action>
+  <action name="actionDockSemanticNet">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Semantic Net Dock</string>
+   </property>
+  </action>
+  <action name="actionDockInforamtion">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Inforamtion Dock</string>
+   </property>
+  </action>
+  <action name="actionBring_to_front">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/18167-layer-send-front-button-vector.png</normaloff>:/new/Image/Icon/actions/18167-layer-send-front-button-vector.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bring to front</string>
+   </property>
+  </action>
+  <action name="actionBring_to_back">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/18167-layer-send-back-button-vector.png</normaloff>:/new/Image/Icon/actions/18167-layer-send-back-button-vector.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bring to back</string>
+   </property>
+  </action>
+  <action name="actionIn_circle">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/view-refresh.png</normaloff>:/new/Image/Icon/actions/view-refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>In circle</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="actionIn_square">
+   <property name="text">
+    <string>In square</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionShow_Out">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/OutEdge.png</normaloff>:/new/Image/Icon/actions/OutEdge.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Out</string>
+   </property>
+  </action>
+  <action name="actionShow_In">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/InEdge.png</normaloff>:/new/Image/Icon/actions/InEdge.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show In</string>
+   </property>
+  </action>
+  <action name="actionShow_In_Out">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/InOut.png</normaloff>:/new/Image/Icon/actions/InOut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show In&amp;Out</string>
+   </property>
+  </action>
+  <action name="actionShow">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/new/Image/Icon/actions/InOut.png</normaloff>:/new/Image/Icon/actions/InOut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="Icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

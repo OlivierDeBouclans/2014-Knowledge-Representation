@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\QtUi">
+      <UniqueIdentifier>{09c1c249-8d19-475d-846b-652198407816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QtUi">
+      <UniqueIdentifier>{4d6a2dd0-d782-43bb-a576-f5f12831e9c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QtUi\Widget">
+      <UniqueIdentifier>{1e3f871b-0763-4383-ab5c-007eeded082c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QtUi\New">
+      <UniqueIdentifier>{c5d163fc-132c-4821-90f2-08d4bf428038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QtUi\New">
+      <UniqueIdentifier>{b6138abd-6eb5-4d19-83dd-cbf54459b715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QtUi\Info">
+      <UniqueIdentifier>{e9110eb1-9a6d-490b-a85e-2ec132d76e45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QtUi\Info">
+      <UniqueIdentifier>{6b8cc8d9-98b7-4f3b-8914-e21341f149f5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GraphElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphElements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SemanticNet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\QDockInfoSemanticNet.cpp">
+      <Filter>Source Files\QtUi</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\QDialogNewElement.cpp">
+      <Filter>Source Files\QtUi</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\QDockInfoElement.cpp">
+      <Filter>Source Files\QtUi</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\Widget\QWidgetSelectedItem.cpp">
+      <Filter>Source Files\QtUi\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\New\QNewAction.cpp">
+      <Filter>Source Files\QtUi\New</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\New\QNewPhysical.cpp">
+      <Filter>Source Files\QtUi\New</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\New\QNewDecorator.cpp">
+      <Filter>Source Files\QtUi\New</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\New\QNewEdge.cpp">
+      <Filter>Source Files\QtUi\New</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\New\QNewEntity.cpp">
+      <Filter>Source Files\QtUi\New</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\New\QNewNumerical.cpp">
+      <Filter>Source Files\QtUi\New</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\Info\QInfoPhysical.cpp">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\Info\QInfoAction.cpp">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\Info\QInfoComposition.cpp">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\Info\QInfoDecorator.cpp">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\Info\QInfoEdge.cpp">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\Info\QInfoEntity.cpp">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="QtUi\Info\QInfoNumerical.cpp">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GraphElement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphElements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SemanticNet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\QDockInfoSemanticNet.h">
+      <Filter>Header Files\QtUi</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\QDockInfoElement.h">
+      <Filter>Header Files\QtUi</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\QDialogNewElement.h">
+      <Filter>Header Files\QtUi</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\Widget\QWidgetSelectedItem.h">
+      <Filter>Header Files\QtUi\New</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\New\QNewAction.h">
+      <Filter>Header Files\QtUi\New</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\New\QNewDecorator.h">
+      <Filter>Header Files\QtUi\New</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\New\QNewEdge.h">
+      <Filter>Header Files\QtUi\New</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\New\QNewEntity.h">
+      <Filter>Header Files\QtUi\New</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\New\QNewNumerical.h">
+      <Filter>Header Files\QtUi\New</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\New\QNewPhysical.h">
+      <Filter>Header Files\QtUi\New</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\Info\QInfoAction.h">
+      <Filter>Header Files\QtUi\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\Info\QInfoPhysical.h">
+      <Filter>Header Files\QtUi\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\Info\QInfoComposition.h">
+      <Filter>Header Files\QtUi\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\Info\QInfoDecorator.h">
+      <Filter>Header Files\QtUi\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\Info\QInfoEdge.h">
+      <Filter>Header Files\QtUi\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\Info\QInfoEntity.h">
+      <Filter>Header Files\QtUi\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="QtUi\Info\QInfoNumerical.h">
+      <Filter>Header Files\QtUi\Info</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QtUi\QDialogNewElement.ui">
+      <Filter>Source Files\QtUi</Filter>
+    </None>
+    <None Include="QtUi\QDockInfoElement.ui">
+      <Filter>Source Files\QtUi</Filter>
+    </None>
+    <None Include="QtUi\QDockInfoSemanticNet.ui">
+      <Filter>Source Files\QtUi</Filter>
+    </None>
+    <None Include="mainwindow.ui">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="QtUi\Widget\QWidgetSelectedItem.ui">
+      <Filter>Source Files\QtUi\Widget</Filter>
+    </None>
+    <None Include="QtUi\New\QNewPhysical.ui">
+      <Filter>Source Files\QtUi\New</Filter>
+    </None>
+    <None Include="QtUi\New\QNewAction.ui">
+      <Filter>Source Files\QtUi\New</Filter>
+    </None>
+    <None Include="QtUi\New\QNewDecorator.ui">
+      <Filter>Source Files\QtUi\New</Filter>
+    </None>
+    <None Include="QtUi\New\QNewEdge.ui">
+      <Filter>Source Files\QtUi\New</Filter>
+    </None>
+    <None Include="QtUi\New\QNewEntity.ui">
+      <Filter>Source Files\QtUi\New</Filter>
+    </None>
+    <None Include="QtUi\New\QNewNumerical.ui">
+      <Filter>Source Files\QtUi\New</Filter>
+    </None>
+    <None Include="QtUi\Info\QInfoPhysical.ui">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </None>
+    <None Include="QtUi\Info\QInfoAction.ui">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </None>
+    <None Include="QtUi\Info\QInfoComposition.ui">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </None>
+    <None Include="QtUi\Info\QInfoDecorator.ui">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </None>
+    <None Include="QtUi\Info\QInfoEdge.ui">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </None>
+    <None Include="QtUi\Info\QInfoEntity.ui">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </None>
+    <None Include="QtUi\Info\QInfoNumerical.ui">
+      <Filter>Source Files\QtUi\Info</Filter>
+    </None>
+  </ItemGroup>
+</Project>

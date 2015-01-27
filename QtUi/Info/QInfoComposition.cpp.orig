@@ -1,0 +1,133 @@
+#include "QInfoComposition.h"
+#include "ui_QInfoComposition.h"
+
+#include <SemanticNet.h>
+#include <GraphElements.h>
+#include <Qtui/QDockInfoElement.h>
+
+GraphCompTreeItem::GraphCompTreeItem(Node* n) : m_pNode(n)
+{
+
+}
+
+QInfoComposition::QInfoComposition(QWidget *parent) :
+  QWidget(parent),
+  ui(new Ui::QInfoComposition)
+{
+  ui->setupUi(this);
+
+  connect(ui->Composition, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
+          this, SLOT(display(QTreeWidgetItem*,int)));
+
+  connect(ui->Hierarchy, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
+          this, SLOT(display(QTreeWidgetItem*)));
+}
+
+QInfoComposition::~QInfoComposition()
+{
+  delete ui;
+}
+
+void QInfoComposition::display(QTreeWidgetItem* item,int i)
+{
+  if(i!=Property)
+    return;
+
+  Node* n=((GraphCompTreeItem*)item)->m_pNode;
+
+  if(n->eType==Node::ENTITY)
+  displayComposition(((Entity*)n)->getHierarchy());
+}
+
+void QInfoComposition::display(QTreeWidgetItem* item)
+{
+  Node* n=((GraphCompTreeItem*)item)->m_pNode;
+
+  displayComposition(((Entity*)n)->getHierarchy());
+}
+
+void QInfoComposition::display(Entity* entity)
+{
+  Tree<Node*> hierarchy=entity->getHierarchy();
+  displayHierarchy(hierarchy);
+  displayComposition(hierarchy);
+}
+
+void QInfoComposition::displayHierarchy(Tree<Node*> t)
+{
+  ui->Hierarchy->clear();
+
+  QTreeWidgetItem item;
+  displayHierarchy(t,&item);
+
+  ui->Hierarchy->addTopLevelItem(item.takeChild(0));
+  ui->Hierarchy->expandAll();
+  ui->Hierarchy->resizeColumnToContents(0);
+  ui->Hierarchy->resizeColumnToContents(1);
+  ui->Hierarchy->resizeColumnToContents(2);
+}
+
+void QInfoComposition::displayHierarchy(Tree<Node*> t, QTreeWidgetItem* i)
+{
+  GraphCompTreeItem* item=new GraphCompTreeItem(t.node);
+  item->setText(0,QString::fromStdString(t.node->label));
+
+  for(unsigned int j=0; j<t.child.size(); j++)
+    displayHierarchy(t.child[j],item);
+
+  i->addChild(item);
+}
+
+void QInfoComposition::displayComposition(Tree<Node*> t)
+{
+  ui->Composition->clear();
+
+  QTreeWidgetItem item;
+  displayComposition(t,&item,0);
+
+  ui->Composition->addTopLevelItems(item.takeChildren());
+
+  ui->Composition->sortByColumn(Depth,Qt::AscendingOrder);
+  ui->Composition->expandAll();
+  ui->Composition->resizeColumnToContents(0);
+  ui->Composition->resizeColumnToContents(1);
+  ui->Composition->resizeColumnToContents(2);
+  ui->Composition->resizeColumnToContents(3);
+}
+
+void QInfoComposition::displayComposition(Tree<Node*> t, QTreeWidgetItem* p,int depth)
+{
+  Tree<Node*> comp=t.node->getComposition();
+  for(unsigned int j=0; j<comp.child.size(); j++)
+    displayComposition(t.node,comp.child[j],p,depth);
+
+  for(unsigned int j=0; j<t.child.size(); j++)
+    displayComposition(t.child[j],p,depth+1);
+}
+
+void QInfoComposition::displayComposition(Node* parent,Tree<Node*> t, QTreeWidgetItem* p, int depth)
+{
+  GraphCompTreeItem *item = new GraphCompTreeItem(t.node) ;
+  item->setText(Depth,QString::number(depth));
+  item->setText(Property,QString::fromStdString(t.node->label));
+  item->setText(From,QString::fromStdString(parent->label));
+  item->setText(Type,QString::fromStdString(t.node->getTypeString()));
+
+  QBrush brush(GraphElement::getColor(t.node));
+
+  for(int a=0; a<p->childCount(); a++)
+    if(((GraphCompTreeItem*)p->child(a))->m_pNode == t.node)
+      {
+        brush.setStyle(Qt::FDiagPattern);
+        item->setText(DefinedBy,p->child(a)->text(From));
+        break;
+      }
+
+  item->setBackground(Property,brush);
+
+  for(unsigned int j=0; j<t.child.size(); j++)
+    displayComposition(parent,t.child[j],item,depth);
+
+  p->addChild(item);
+}
+
