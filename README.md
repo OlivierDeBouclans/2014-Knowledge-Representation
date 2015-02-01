@@ -4,7 +4,6 @@
 
 *  Click here to watch a [short demonstration video](http://youtu.be/J3H5N4Xq6YQ) 
 *  Click here to see the [commented version](http://youtu.be/kuEOkY3mTCg) (in french [here](http://youtu.be/MZzXB3ecEME) )
-*  Feel free to download the [demo version](https://github.com/OlivierDeBouclans/2014-Knowledge-Representation/raw/master/TryMe-KnowledgeRepresentation.rar) to test the project 
 
 ---
 
